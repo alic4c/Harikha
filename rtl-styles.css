@@ -1,0 +1,135 @@
+/* تطبيق خط Cairo على النص العربي والكردي */
+body {
+  font-family: 'Cairo', sans-serif;
+}
+
+/* أنماط لجعل الشعار على الجهة اليسرى والشريط على الجهة اليمنى */
+.navbar .navbar-nav {
+  flex-direction: row-reverse; /* الحفاظ على الاتجاه الحالي من اليمين إلى اليسار */
+  padding-right: 0;
+}
+
+.navbar .navbar-nav .nav-item {
+  float: right; /* جعل العناصر تطفو إلى اليمين */
+}
+
+/* تعديل هوامش القائمة لتكون في الجهة اليمنى */
+.navbar .mr-auto {
+  margin-right: auto !important;
+  margin-left: 0 !important;
+}
+
+/* تعديل موضع القائمة بالكامل */
+.navbar-collapse {
+  display: flex;
+  justify-content: flex-start !important; /* سحب القائمة إلى الجهة اليمنى */
+}
+
+/* جعل الشعار على الجهة اليسرى */
+.navbar .navbar-brand {
+  position: static;
+  margin-right: 0;
+  margin-left: auto; /* دفع الشعار إلى اليسار */
+  order: 2; /* جعل الشعار يظهر بعد القائمة */
+}
+
+.navbar .dropdown-menu {
+  text-align: right; /* محاذاة نص القوائم المنسدلة إلى اليمين */
+}
+
+.navbar .navbar-toggler {
+  margin-right: auto;
+  margin-left: 0;
+}
+
+/* تعديل الحاوية الرئيسية لشريط التنقل */
+.navbar .container-fluid {
+  display: flex;
+  flex-direction: row; /* ترتيب العناصر في الحاوية */
+  justify-content: space-between; /* توزيع المساحة بين الشعار والقائمة */
+}
+
+/* جعل نص البانر من اليمين إلى اليسار */
+.banner-text h1,
+.banner-text h2,
+.banner-text p {
+  direction: rtl;
+  text-align: right;
+}
+
+/* محاذاة العنوان مع الفقرة (الفقرة لديها حشوة إضافية من كلاس banner-text) */
+.banner-text h1,
+.banner-text h2 {
+  padding-right: 80px;
+}
+
+/* تكبير عرض نص البانر قليلاً دون إزاحة موضعه */
+@media (min-width: 768px) {
+  div.banner-text {
+    width: calc(100% + 60px);
+    margin-left: -60px;
+  }
+}
+
+/* إزاحة صورة وأزرار التحميل في البانر إلى اليمين قليلاً */
+.banner-text .img-fluid,
+.banner-text .store-buttons {
+  margin-left: 100px;
+}
+
+/* نصوص بطاقات الخدمات من اليمين إلى اليسار */
+.card-description,
+.card-description-mobile {
+  direction: rtl;
+  text-align: right;
+}
+
+/* اتجاه كل النصوص العربية من اليمين إلى اليسار */
+h1, h2, h3, h4, h5, h6,
+p, li, td, th, a, span, button {
+  direction: rtl;
+}
+
+/* محاذاة الفقرات والقوائم وأجساد البطاقات إلى اليمين */
+p, li, .media-body,
+.accordion .card-body,
+.accordion .card-header,
+.accordion .btn-link {
+  text-align: right;
+}
+
+/* الإبقاء على العناوين داخل الأقسام المتوسطة في المنتصف */
+.text-center,
+.text-center p,
+.text-center h1, .text-center h2, .text-center h3,
+.text-center h4, .text-center h5, .text-center h6 {
+  text-align: center;
+}
+
+/* ترتيب بطاقات صفحات التطبيق من اليمين إلى اليسار */
+#app-pages .app-screens-container .row {
+  flex-direction: row-reverse;
+}
+
+/* نصوص بطاقات صفحات التطبيق من اليمين ومحاذاة يمين */
+#app-pages .app-screen-item h4,
+#app-pages .app-screen-item p {
+  direction: rtl;
+  text-align: right;
+}
+
+/* الأسئلة الشائعة من اليمين إلى اليسار */
+.faq-question,
+.faq-answer,
+.faq-answer-content,
+.faq-category {
+  direction: rtl;
+  text-align: right;
+}
+
+/* تنسيقات المواقف RTL */
+.parking-item {
+  border-left: 1px solid #e9ecef;
+  border-right: 4px solid #1490DA;
+  text-align: right;
+}

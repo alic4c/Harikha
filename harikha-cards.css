@@ -1,0 +1,581 @@
+/* أنماط البطاقات الجديدة في قسم About */
+.harikha-cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+  position: relative;
+}
+
+.harikha-cards-wrapper {
+  position: relative;
+  width: 320px;
+  height: 320px;
+}
+
+.harikha-circle {
+  position: absolute;
+  width: 230px;
+  height: 230px;
+  background: radial-gradient(circle, #3FA9E8 0%, #1490DA 100%);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.harikha-card {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background-color: #1490DA;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+  transition: all 0.3s ease;
+  border: 5px solid white;
+  transform: rotate(45deg);
+}
+
+.harikha-card::before,
+.harikha-card::after {
+  display: none;
+}
+
+.card-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-45deg);
+}
+
+.card-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: none;
+}
+
+.card-icon i {
+  font-size: 42px;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.harikha-card:hover .card-icon i {
+  color: #1490DA !important;
+}
+
+.card-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  transition: all 0.3s ease;
+}
+
+/* مواضع البطاقات */
+.card-top-left {
+  top: 15px;
+  left: 15px;
+  animation-name: fadeInTopLeft;
+}
+
+.card-top-right {
+  top: 15px;
+  right: 15px;
+  animation-name: fadeInTopRight;
+}
+
+.card-bottom-left {
+  bottom: 15px;
+  left: 15px;
+  animation-name: fadeInBottomLeft;
+}
+
+.card-bottom-right {
+  bottom: 15px;
+  right: 15px;
+  animation-name: fadeInBottomRight;
+}
+
+/* تعريف الأنيميشن */
+@keyframes fadeInTopLeft {
+  from {
+    opacity: 0;
+    transform: translate(-50px, -50px) rotate(45deg);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0) rotate(45deg);
+  }
+}
+
+@keyframes fadeInTopRight {
+  from {
+    opacity: 0;
+    transform: translate(50px, -50px) rotate(45deg);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0) rotate(45deg);
+  }
+}
+
+@keyframes fadeInBottomLeft {
+  from {
+    opacity: 0;
+    transform: translate(-50px, 50px) rotate(45deg);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0) rotate(45deg);
+  }
+}
+
+@keyframes fadeInBottomRight {
+  from {
+    opacity: 0;
+    transform: translate(50px, 50px) rotate(45deg);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0) rotate(45deg);
+  }
+}
+
+/* تأثير التحويم */
+.harikha-card:hover {
+  transform: rotate(45deg) scale(1.1) !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2) !important;
+  cursor: pointer !important;
+  z-index: 10 !important;
+  border-color: #1490DA !important;
+  background-color: white !important;
+  transition: all 0.3s ease !important;
+}
+
+.harikha-card:hover .card-icon img {
+  filter: none !important;
+  transition: all 0.3s ease !important;
+}
+
+.harikha-card.no-hover:hover {
+  cursor: default !important;
+}
+
+/* تأثير إضافي للنص عند التحويم */
+.card-top-left:hover ~ .card-description.top-left {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-5px);
+  border-left: 4px solid #1490DA;
+  box-shadow: 0 5px 20px rgba(20, 144, 218, 0.2);
+}
+
+.card-top-right:hover ~ .card-description.top-right {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-5px);
+  border-left: 4px solid #1490DA;
+  box-shadow: 0 5px 20px rgba(20, 144, 218, 0.2);
+}
+
+.card-bottom-left:hover ~ .card-description.bottom-left {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-5px);
+  border-left: 4px solid #1490DA;
+  box-shadow: 0 5px 20px rgba(20, 144, 218, 0.2);
+}
+
+.card-bottom-right:hover ~ .card-description.bottom-right {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-5px);
+  border-left: 4px solid #1490DA;
+  box-shadow: 0 5px 20px rgba(20, 144, 218, 0.2);
+}
+
+/* تنسيقات النصوص حول المربعات */
+.card-description {
+  position: absolute;
+  width: 400px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: none;
+  text-align: left;
+  z-index: 3;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-left: 1px solid transparent;
+  border-top: 3px solid #1490DA;
+  opacity: 0.7;
+  visibility: visible;
+}
+
+.card-description:hover {
+  box-shadow: 0 5px 20px rgba(20, 144, 218, 0.2);
+  transform: translateY(-5px);
+}
+
+.card-description h4 {
+  color: #1490DA;
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.card-description p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+/* مواضع النصوص */
+.card-description.top-right {
+  top: -40px;
+  right: -450px;
+}
+
+.card-description.top-left {
+  top: -40px;
+  left: -450px;
+}
+
+.card-description.bottom-right {
+  bottom: -40px;
+  right: -450px;
+}
+
+.card-description.bottom-left {
+  bottom: -40px;
+  left: -450px;
+}
+
+@media (max-width: 1400px) {
+  .card-description {
+    width: 250px;
+  }
+  
+  .card-description.top-right,
+  .card-description.bottom-right {
+    right: -280px;
+  }
+  
+  .card-description.top-left,
+  .card-description.bottom-left {
+    left: -280px;
+  }
+  
+  .card-description.top-right {
+    top: -60px;
+  }
+  
+  .card-description.top-left {
+    top: -60px;
+  }
+  
+  .card-description.bottom-right {
+    bottom: -60px;
+  }
+  
+  .card-description.bottom-left {
+    bottom: -60px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .card-description {
+    width: 220px;
+    padding: 12px;
+  }
+  
+  .card-description h4 {
+    font-size: 16px;
+  }
+  
+  .card-description p {
+    font-size: 13px;
+  }
+  
+  .card-description.top-right,
+  .card-description.bottom-right {
+    right: -240px;
+  }
+  
+  .card-description.top-left,
+  .card-description.bottom-left {
+    left: -240px;
+  }
+}
+
+@media (max-width: 992px) {
+  .harikha-cards-wrapper {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .harikha-circle {
+    width: 110px;
+    height: 110px;
+  }
+  
+  .harikha-card {
+    width: 75px;
+    height: 75px;
+    border-width: 3px;
+  }
+  
+  .card-icon {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .card-top-left {
+    top: 8px;
+    left: 8px;
+  }
+  
+  .card-top-right {
+    top: 8px;
+    right: 8px;
+  }
+  
+  .card-bottom-left {
+    bottom: 8px;
+    left: 8px;
+  }
+  
+  .card-bottom-right {
+    bottom: 8px;
+    right: 8px;
+  }
+  
+  .card-description {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 15px auto;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    display: none; /* إخفاء النصوص الجانبية في الشاشات الصغيرة */
+  }
+  
+  .harikha-cards-container {
+    margin-bottom: 20px;
+  }
+  
+  /* تنسيقات النصوص المتجاوبة للشاشات الصغيرة */
+  .card-description-mobile {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: none;
+    text-align: left;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+    border-left: 4px solid #1490DA;
+    border-top: 3px solid #1490DA;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .card-description-mobile:hover {
+    box-shadow: 0 5px 20px rgba(20, 144, 218, 0.2);
+    transform: translateY(-5px);
+  }
+  
+  .card-description-mobile h4 {
+    color: #1490DA;
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  
+  .card-description-mobile p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 0;
+  }
+  
+  .mobile-descriptions {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .harikha-cards-wrapper {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .harikha-circle {
+    width: 110px;
+    height: 110px;
+  }
+  
+  .harikha-card {
+    width: 75px;
+    height: 75px;
+    border-width: 3px;
+  }
+  
+  .card-icon {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .card-top-left {
+    top: 8px;
+    left: 8px;
+  }
+  
+  .card-top-right {
+    top: 8px;
+    right: 8px;
+  }
+  
+  .card-bottom-left {
+    bottom: 8px;
+    left: 8px;
+  }
+  
+  .card-bottom-right {
+    bottom: 8px;
+    right: 8px;
+  }
+}
+
+@media (max-width: 576px) {
+  .harikha-cards-wrapper {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .harikha-circle {
+    width: 110px;
+    height: 110px;
+  }
+  
+  .harikha-card {
+    width: 75px;
+    height: 75px;
+    border-width: 3px;
+  }
+  
+  .card-icon {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .card-description-mobile {
+    padding: 12px;
+  }
+  
+  .card-description-mobile h4 {
+    font-size: 16px;
+  }
+  
+  .card-description-mobile p {
+    font-size: 13px;
+  }
+}
+
+/* تنسيقات أيقونات وسائل التواصل الاجتماعي */
+.social-icons-container {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 0;
+  gap: 15px;
+  flex-direction: row;
+}
+
+/* for all social containers*/
+.socialContainer {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: rgb(44, 44, 44);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+
+/* instagram*/
+.containerOne:hover {
+  background-color: #d62976;
+  transition-duration: 0.3s;
+}
+
+/* facebook*/
+.containerTwo:hover {
+  background-color: #4267B2;
+  transition-duration: 0.3s;
+}
+
+/* twitter*/
+.containerThree:hover {
+  background-color: #00acee;
+  transition-duration: 0.3s;
+}
+
+/* Whatsapp*/
+.containerFour:hover {
+  background-color: #128c7e;
+  transition-duration: 0.3s;
+}
+
+/* Email */
+.containerFive:hover {
+  background-color: #D44638;
+  transition-duration: 0.3s;
+}
+
+.socialContainer:active {
+  transform: scale(0.9);
+  transition-duration: 0.3s;
+}
+
+.socialSvg {
+  width: 17px;
+  height: 17px;
+  fill: white;
+}
+
+.socialContainer:hover .socialSvg {
+  animation: slide-in-top 0.3s both;
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
