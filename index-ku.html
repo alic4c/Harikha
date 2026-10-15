@@ -2,6 +2,8 @@
 <html lang="ku">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; img-src 'self' https: data:; style-src 'self' https: 'unsafe-inline'; script-src 'self' https: 'unsafe-inline'; font-src 'self' https: data:; connect-src 'self' https:; frame-src https://www.youtube-nocookie.com https://www.youtube.com https://maps.google.com https://www.google.com; upgrade-insecure-requests;">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>پلاتفۆرمی حەرکها</title>
 <meta name="description" content="پلاتفۆرمی حەرکها — ئەپڵیکەیشنێکی زیرەک بۆ پەیوەندیکردن بە خاوەن ئۆتۆمبێلەکانەوە بە ژمارەی تابڵۆک، گەڕان بۆ پارکینگە نزیکەکان و حیجزکردنیان و بەڕێوەبردنیان.">
 <meta property="og:title" content="پلاتفۆرمی حەرکها">
@@ -14,9 +16,9 @@
 <meta name="theme-color" content="#1490DA">
 <link rel="canonical" href="https://harikha.com/index-ku.html">
 <link rel="alternate" hreflang="ku" href="https://harikha.com/index-ku.html">
-<link rel="alternate" hreflang="ar" href="https://harikha.com/index-ar.html">
-<link rel="alternate" hreflang="en" href="https://harikha.com/index.html">
-<link rel="alternate" hreflang="x-default" href="https://harikha.com/index-ar.html">
+<link rel="alternate" hreflang="ar" href="https://harikha.com/index.html">
+<link rel="alternate" hreflang="en" href="https://harikha.com/index-en.html">
+<link rel="alternate" hreflang="x-default" href="https://harikha.com/index.html">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="پلاتفۆرمی حەرکها">
 <meta name="twitter:description" content="ئەپڵیکەیشنێکی زیرەک بۆ پەیوەندیکردن بە خاوەن ئۆتۆمبێلەکانەوە و حیجزی پارکینگ.">
@@ -32,7 +34,7 @@
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "IQD" }
 }
 </script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css" integrity="sha384-OBGq3IQTndpwj4yVTlsxkC5QC+Sp147BX1jXO8plyNuOplmA/JPsHByqpqdORU3A" crossorigin="anonymous">
 <link rel="stylesheet" href="css/animate.min.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="style.min.css"/>
@@ -182,6 +184,7 @@
   ]
 }
 </script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 </head>
 
 <body>
@@ -347,8 +350,8 @@
             </div>
           </a>
           <div class="dropdown-menu language-dropdown" aria-labelledby="language-switcher">
-            <a class="dropdown-item" href="index.html">English</a>
-            <a class="dropdown-item" href="index-ar.html">العربية</a>
+            <a class="dropdown-item" href="index-en.html">English</a>
+            <a class="dropdown-item" href="index.html">العربية</a>
             <a class="dropdown-item active" href="index-ku.html">کوردی</a>
           </div>
         </li>
@@ -366,7 +369,7 @@
         <div class="col-md-8 col-sm-12">
           <div class="banner-text">
             <h1 class="white wow fadeInDown" data-wow-delay="0.2s">بەخێربێن بۆ پلاتفۆرمی حەرکها</h1>
-            <p class="banner-text white wow fadeInDown" data-wow-delay="0.4s">پلاتفۆرمی حەرکها ئەپڵیکەیشنێکی زیرەکە بۆ خاوەن ئۆتۆمبێلەکان کە یارمەتیت دەدات پەیوەندی بە خاوەنی هەر ئۆتۆمبێلێکەوە بکەیت کاتێک پێویستە بیجوڵێنیت یان ئاگاداری بکەیتەوە دەربارەی ئۆتۆمبێلەکەی، لە ڕێگەی ژمارەی تابڵۆکەوە، لەگەڵ ئەزموونی پەیوەندیکردن یان چاتکردن بە واتساپ یان ناردنی ئاگادارکردنەوە لەناو ئەپڵیکەیشنەکەدا. هەروەها ئەپڵیکەیشنەکە خزمەتگوزاری گەڕان بۆ پارکی ئۆتۆمبێلی نزیکەوە و حیجزکردنیان بە ئەلیکترۆنی دابین دەکات، کە کات و ماندووبوون کەم دەکاتەوە و دۆزینەوەی پارک ئاسانتر و خێراتر دەکات. بە کورتی: حەرکها پەیوەندی نێوان خاوەن ئۆتۆمبێلەکان ئاسان دەکات و گەڕان بۆ پارک و حیجزکردنی ئاسانتر دەکات.</p>
+            <p class="banner-text white wow fadeInDown" data-wow-delay="0.4s">پلاتفۆرمی حەرکها ئەپڵیکەیشنێکی زیرەکە کە یارمەتیت دەدات بگەڕێیت و خاوەنی هەر ئۆتۆمبێلێک بدۆزیتەوە بۆ پەیوەندیکردن بە کاتێک پێویستە بیجوڵێنیت یان ئاگاداری بکەیتەوە دەربارەی ئۆتۆمبێلەکەی، لە ڕێگەی ژمارەی تابڵۆکەوە، لەگەڵ ئەزموونی پەیوەندیکردن یان چاتکردن بە واتساپ یان ناردنی ئاگادارکردنەوە لەناو ئەپڵیکەیشنەکەدا. هەروەها ئەپڵیکەیشنەکە خزمەتگوزاری گەڕان و دۆزینەوەی پارکی ئۆتۆمبێلی نزیکەوە و حیجزکردنیان بە ئەلیکترۆنی دابین دەکات، کە کات و ماندووبوون کەم دەکاتەوە و دۆزینەوەی پارک ئاسانتر و خێراتر دەکات.</p>
             <img src="images/r.webp" class="img-fluid wow fadeInUp" data-wow-delay="0.6s" alt="r image"/>
             
             <!-- إضافة أزرار Play Store -->
@@ -439,7 +442,7 @@
         <div class="sectioner-header text-center">
           <h3>خزمەتگوزاریەکان</h3>
           <span class="line"></span>
-          <p>کۆمەڵێک خزمەتگوزاری زیرەک پێشکەش دەکەین: پەیوەندیکردن بە خاوەن ئۆتۆمبێلەکانەوە لە ڕێگەی ژمارەی تابڵۆکەوە، گەڕان بۆ پارکی نزیکەوە، حیجزکردنی شوێنێک لە گەراج بە ئەلیکترۆنی، و ئامرازەکان بۆ بەڕێوەبردنی پارکینگەکان و چاودێری حیجزەکان و داهاتەکان.</p>
+          <p>کۆمەڵێک خزمەتگوزاری زیرەک پێشکەش دەکەین: لەوانە گەڕان بۆ خاوەن ئۆتۆمبێلەکان و پەیوەندیکردن بە ڕێگەی ژمارەی تابڵۆک یان بارکۆدەوە، دۆزینەوەی پارکی ئۆتۆمبێلی نزیکەوە و زانینی وردەکاری و خزمەتگوزارییەکانیان، حیجزکردنی پارک و بەدواداچوون بۆ حیجزکراوەکان لە ڕێگەی پسووڵەی ئەلیکترۆنیی پارێزراوەوە، لەگەڵ دابینکردنی ئامرازەکان بۆ خاوەن (کراجەکان) بۆ ڕێکخستنی پارکەکان و بەڕێوەبردنی حیجزکراوەکان و بەدواداچوونی داهاتەکان.</p>
         </div>
         <div class="section-content text-center">
           <div class="row">
@@ -489,7 +492,7 @@
                   
                   <div class="card-description bottom-right wow animate__animated animate__fadeIn" data-wow-delay="1.4s">
                     <h4>بەڕێوەبردنی شوێنەکانی پارکینگ</h4>
-                    <p>بۆ خاوەن شوێنەکانی پارکینگ ئامرازەکان دابین بکە بۆ بەڕێوەبردنی حیجزکراوەکان، ڕێکخستنی شوێنە بەردەستەکان و بەدواداچوونی داهاتەکان، بۆ ئەوەی یارمەتیان بدەن کاروبارەکانیان پەرە بسێنن.</p>
+                    <p>ئێمە بۆ خاوەن شوێنەکانی پارکینگ ئەپڵیکەیشنێک دابین دەکەین بۆ بەڕێوەبردنی حیجزکراوەکان و بەدواداچوونی داهاتەکان، بۆ ئەوەی یارمەتیان بدەن کاروبارەکانیان پەرە بسێنن و کاریگەریی کارکردن زیاد بکەن.</p>
                   </div>
                   
                   <div class="card-description bottom-left wow animate__animated animate__fadeIn" data-wow-delay="1.6s">
@@ -521,7 +524,7 @@
               
               <div class="card-description-mobile wow animate__animated animate__fadeIn" data-wow-delay="1.6s">
                 <h4>بەڕێوەبردنی شوێنەکانی پارکینگ</h4>
-                <p>بۆ خاوەن شوێنەکانی پارکینگ ئامرازەکان دابین بکە بۆ بەڕێوەبردنی حیجزکراوەکان، ڕێکخستنی شوێنە بەردەستەکان و بەدواداچوونی داهاتەکان، بۆ ئەوەی یارمەتیان بدەن کاروبارەکانیان پەرە بسێنن.</p>
+                <p>ئێمە بۆ خاوەن شوێنەکانی پارکینگ ئەپڵیکەیشنێک دابین دەکەین بۆ بەڕێوەبردنی حیجزکراوەکان و بەدواداچوونی داهاتەکان، بۆ ئەوەی یارمەتیان بدەن کاروبارەکانیان پەرە بسێنن و کاریگەریی کارکردن زیاد بکەن.</p>
               </div>
             </div>
           </div>
@@ -541,7 +544,7 @@
       <div class="video-popup">
         <div class="video-src">
           <div class="iframe-src">
-            <iframe src="https://www.youtube.com/embed/Ku52zNft8k?rel=0&amp;showinfo=0" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/Ku52zNft8k?rel=0&amp;showinfo=0" title="فيديو تطبيق حركها" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
         </div>
       </div>
@@ -726,7 +729,7 @@
         <div class="section-content">
           <div class="row align-items-center">
             <div class="col-md-5">
-              <div class="parking-list">
+              <div class="parking-list" id="parking-list">
                 <div class="parking-item wow fadeInUp" data-wow-delay="0.1s">
                   <span class="parking-num">1</span>
                   <i class="fas fa-map-marker-alt parking-icon"></i>
@@ -805,7 +808,7 @@
               </div>
             </div>
             <div class="col-md-7 wow fadeInUp" data-wow-delay="0.3s">
-              <iframe src="https://maps.google.com/maps?q=Baghdad%2C%20Iraq&z=11&output=embed" style="width: 100%; height: 450px; border: 0; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.15);" allowfullscreen loading="lazy"></iframe>
+              <div id="parking-map" style="width:100%;height:450px;border-radius:10px;box-shadow:0 5px 20px rgba(0,0,0,0.15);"></div>
             </div>
           </div>
         </div>
@@ -1195,7 +1198,7 @@
         <div class="section-content">
           <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-8">
-              <form id="contact_form" action="">
+              <form id="contact_form" action="" method="post" onsubmit="return false;">
                 <div class="row">
                   <div class="col">
                     <input type="text" id="your_name" class="form-input w-100" name="full-name" placeholder="ناوی تەواو" required>
@@ -1238,22 +1241,22 @@
                   <div class="media-body">
                     <div class="social-icons">
                       <!-- Instagram -->
-                      <a href="https://instagram.com/harikha" target="_blank" class="social-icon instagram">
+                      <a href="https://instagram.com/harikha" target="_blank" rel="noopener noreferrer" class="social-icon instagram">
                         <img src="images/instagram.svg" alt="Instagram" width="24" height="24">
                       </a>
                       
                       <!-- Facebook -->
-                      <a href="https://facebook.com/harikha" target="_blank" class="social-icon facebook">
+                      <a href="https://facebook.com/harikha" target="_blank" rel="noopener noreferrer" class="social-icon facebook">
                         <img src="images/facebook.svg" alt="Facebook" width="24" height="24">
                       </a>
                       
                       <!-- WhatsApp -->
-                      <a href="https://wa.me/966500000000" target="_blank" class="social-icon whatsapp">
+                      <a href="https://wa.me/966500000000" target="_blank" rel="noopener noreferrer" class="social-icon whatsapp">
                         <img src="images/WhatsApp.svg" alt="WhatsApp" width="24" height="24">
                       </a>
                       
                       <!-- Email -->
-                      <a href="mailto:info@harikha.com" target="_blank" class="social-icon email">
+                      <a href="mailto:info@harikha.com" target="_blank" rel="noopener noreferrer" class="social-icon email">
                         <img src="images/email.svg" alt="Email" width="24" height="24">
                       </a>
                     </div>
@@ -1277,7 +1280,7 @@
         <div class="sectioner-header text-center white">
           <h3>ئامارەکانی ئەپی حەرکها</h3>
           <div style="width: 70px; height: 2px; background-color: #1490DA; margin: 20px auto;"></div>
-          <p class="white">پەیوەندی بکە بە هەزاران بەکارهێنەری ڕازی کە متمانە بە حەرکها دەکەن بۆ پەیوەندیکردن بە خاوەن ئۆتۆمبێلەکانەوە و حیجزی پارکینگ.</p>
+          <p class="white">پەیوەندی بکە بە هەزاران بەکارهێنەری ڕازی کە متمانە بە حەرکها دەکەن بۆ گەڕان و پەیوەندیکردن بە خاوەن ئۆتۆمبێلەکانەوە و حیجزی شوێنەکانی پارکینگ. کۆمەڵگای گەشەکردنمان و هەڵسەنگاندنە بەرزەکانمان پابەندبوونمان پیشان دەدەن بۆ پێشکەشکردنی خزمەتگوزاری نایاب لە سەرانسەری عێراقدا.</p>
         </div>
       </div>
       
@@ -1343,11 +1346,11 @@
     
     // گواستنەوەی بەکارهێنەر بە پەڕەی تایبەت بە زمانی هەڵبژێردراو
     if (lang === 'ar') {
-      window.location.href = 'index-ar.html';
+      window.location.href = 'index.html';
     } else if (lang === 'ku') {
       window.location.href = 'index-ku.html';
     } else {
-      window.location.href = 'index.html';
+      window.location.href = 'index-en.html';
     }
     
     // ڕێگرتن لە ڕەفتاری بنەڕەتی لینک
@@ -1385,9 +1388,9 @@
   });
 </script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha384-1H217gwSVyLSIfaLxHbE7dRb3v4mYCKbpQvzx0cegeju1MVsGrX5xXxAvs/HgeFs" crossorigin="anonymous"></script> 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script> 
-<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script> 
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js" integrity="sha384-bpp4PcOToH3EmrnuYwX4gLkS4W0vLr6C09LSagE26WJ0XhFrDHwJPDA91kVVwyQf" crossorigin="anonymous"></script> 
 <!-- scrollIt js --> 
 <script src="js/scrollIt.min.js"></script> 
 <script src="js/wow.min.js"></script> 
@@ -1533,10 +1536,25 @@
 
 <!-------زر العودة للأعلى وواتساب------->
 <button id="back-to-top" aria-label="گەڕانەوە بۆ سەرەوە" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
-<a id="whatsapp-float" href="https://wa.me/966500000000" target="_blank" aria-label="پەیوەندی بە واتساپەوە">
+<a id="whatsapp-float" href="https://wa.me/966500000000" target="_blank" rel="noopener noreferrer" aria-label="پەیوەندی بە واتساپەوە">
   <svg viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
 </a>
 <script>
+  // القائمة الجانبية — خلفية معتمة وإغلاق بالنقر خارجها
+  $('#navbarSupportedContent')
+    .on('show.bs.collapse', function() { document.body.classList.add('drawer-open'); })
+    .on('hidden.bs.collapse', function() { document.body.classList.remove('drawer-open'); });
+  $(document).on('click', function(e) {
+    if (document.body.classList.contains('drawer-open') && !$(e.target).closest('#navbarSupportedContent').length) {
+      $('#navbarSupportedContent').collapse('hide');
+    }
+  });
+  $('#navbarSupportedContent .nav-link:not(#language-switcher)').on('click', function() {
+    if (window.innerWidth < 992) {
+      $('#navbarSupportedContent').collapse('hide');
+    }
+  });
+  
   window.addEventListener('scroll', function() {
     var btn = document.getElementById('back-to-top');
     btn.style.display = window.scrollY > 300 ? 'flex' : 'none';
@@ -1544,6 +1562,108 @@
     var h = document.documentElement.scrollHeight - window.innerHeight;
     progress.style.width = (window.scrollY / h * 100) + '%';
   });
+</script>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+// جلب مواقف الكراجات من Firebase Firestore + عرضها على الخريطة
+(function() {
+  var listEl = document.getElementById('parking-list');
+  var mapEl = document.getElementById('parking-map');
+  if (!listEl && !mapEl) return;
+
+  function esc(s){var d=document.createElement('div');d.textContent=s==null?'':String(s);return d.innerHTML;}
+  function val(v){
+    if(v==null)return null;
+    if('stringValue'in v)return v.stringValue;
+    if('integerValue'in v)return +v.integerValue;
+    if('doubleValue'in v)return v.doubleValue;
+    if('booleanValue'in v)return v.booleanValue;
+    if('arrayValue'in v)return(v.arrayValue.values||[]).map(val);
+    if('mapValue'in v)return fld(v.mapValue.fields);
+    if('timestampValue'in v)return v.timestampValue;
+    return null;
+  }
+  function fld(f){var o={};for(var k in f)o[k]=val(f[k]);return o;}
+
+  // تهيئة خريطة Leaflet على بغداد
+  var map = null;
+  if (mapEl && typeof L !== 'undefined') {
+    map = L.map('parking-map', {
+      scrollWheelZoom: false          // لا تكبّر عند تمرير الصفحة بالفأرة، التحكم بـ +/- أو بطاقة
+    }).setView([33.3152, 44.3661], 11);
+    var base='https://server.arcgisonline.com/ArcGIS/rest/services/';
+    var opts={attribution:'&copy; Esri, HERE, Garmin, &copy; OpenStreetMap',maxZoom:19};
+    var layers={
+      'شەقام': L.tileLayer(base+'World_Street_Map/MapServer/tile/{z}/{y}/{x}',opts),
+      'تاریک': L.layerGroup([
+        L.tileLayer(base+'Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}',opts),
+        L.tileLayer(base+'Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}',opts)
+      ]),
+      'ئەستێرە': L.layerGroup([
+        L.tileLayer(base+'World_Imagery/MapServer/tile/{z}/{y}/{x}',opts),
+        L.tileLayer(base+'Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}',opts)
+      ]),
+      'زەوی': L.tileLayer(base+'World_Topo_Map/MapServer/tile/{z}/{y}/{x}',opts)
+    };
+    layers['شەقام'].addTo(map);
+    L.control.layers(layers,null,{position:'topright'}).addTo(map);
+  }
+
+  fetch('https://firestore.googleapis.com/v1/projects/harika-owners/databases/(default)/documents/parkings?pageSize=50')
+    .then(function(r){return r.json();})
+    .then(function(data){
+      var docs=(data.documents||[]).map(function(d){return fld(d.fields);});
+      if(!docs.length)return;
+
+      // القائمة — اسم وعنوان + نقرة تطير بالخريطة
+      var markers=[];
+      if (listEl) {
+        var html='';
+        docs.forEach(function(p,i){
+          var hasCoords=p.latitude!=null&&p.longitude!=null;
+          html+='<div class="parking-item clickable wow fadeInUp" data-idx="'+i+'"'+(hasCoords?' data-lat="'+p.latitude+'" data-lng="'+p.longitude+'"':'')+' data-wow-delay="'+(0.1*((i%8)+1)).toFixed(1)+'s">'
+            +'<span class="parking-num">'+(i+1)+'</span>'
+            +'<i class="fas fa-map-marker-alt parking-icon"></i>'
+            +'<div class="parking-info">'
+            +'<h4>'+esc(p.name||'')+'</h4>'
+            +(p.address||p.location_description?'<p>'+esc(p.address||p.location_description)+'</p>':'')
+            +'</div></div>';
+        });
+        listEl.innerHTML=html;
+      }
+
+      // الخريطة — علامة لكل موقف بإحداثياته
+      if (map) {
+        var bounds=[];
+        docs.forEach(function(p,i){
+          if (p.latitude!=null && p.longitude!=null) {
+            var m=L.marker([p.latitude,p.longitude]).addTo(map);
+            var pop='<b>'+esc(p.name||'')+'</b>';
+            if(p.address||p.location_description)pop+='<br>'+esc(p.address||p.location_description);
+            m.bindPopup(pop);
+            markers[i]=m;
+            bounds.push([p.latitude,p.longitude]);
+          }
+        });
+        if (bounds.length) map.fitBounds(bounds,{padding:[30,30],maxZoom:14});
+      }
+
+      // نقرة على بطاقة الموقف → تطير الخريطة إليه وتفتح نافذته
+      if (listEl && map) {
+        listEl.addEventListener('click',function(e){
+          var item=e.target.closest('.parking-item');
+          if(!item||item.dataset.lat==null)return;
+          var idx=+item.dataset.idx;
+          // تمرير للخريطة على الشاشات الصغيرة أولاً
+          if(window.innerWidth<992)mapEl.scrollIntoView({behavior:'smooth',block:'center'});
+          map.flyTo([+item.dataset.lat,+item.dataset.lng],15,{duration:1.2});
+          if(markers[idx])setTimeout(function(){markers[idx].openPopup();},1250);
+        });
+      }
+    })
+    .catch(function(){/* يبقى المحتوى الثابت احتياطياً عند فشل الجلب */});
+})();
 </script>
 </body>
 </html>

@@ -3,50 +3,53 @@ body {
   font-family: 'Cairo', sans-serif;
 }
 
-/* أنماط لجعل الشعار على الجهة اليسرى والشريط على الجهة اليمنى */
-.navbar .navbar-nav {
-  flex-direction: row-reverse; /* الحفاظ على الاتجاه الحالي من اليمين إلى اليسار */
-  padding-right: 0;
-}
+/* أنماط RTL للنافبار — للشاشات الكبيرة فقط حتى لا تكسر قائمة الجوال المنبثقة
+   (قاعدة display:flex كانت تلغي collapse وتجعل القائمة مفتوحة دائماً على الجوال) */
+@media (min-width: 992px) {
+  .navbar .navbar-nav {
+    flex-direction: row-reverse; /* الحفاظ على الاتجاه الحالي من اليمين إلى اليسار */
+    padding-right: 0;
+  }
 
-.navbar .navbar-nav .nav-item {
-  float: right; /* جعل العناصر تطفو إلى اليمين */
-}
+  .navbar .navbar-nav .nav-item {
+    float: right; /* جعل العناصر تطفو إلى اليمين */
+  }
 
-/* تعديل هوامش القائمة لتكون في الجهة اليمنى */
-.navbar .mr-auto {
-  margin-right: auto !important;
-  margin-left: 0 !important;
-}
+  /* تعديل هوامش القائمة لتكون في الجهة اليمنى */
+  .navbar .mr-auto {
+    margin-right: auto !important;
+    margin-left: 0 !important;
+  }
 
-/* تعديل موضع القائمة بالكامل */
-.navbar-collapse {
-  display: flex;
-  justify-content: flex-start !important; /* سحب القائمة إلى الجهة اليمنى */
-}
+  /* تعديل موضع القائمة بالكامل */
+  .navbar-collapse {
+    display: flex;
+    justify-content: flex-start !important; /* سحب القائمة إلى الجهة اليمنى */
+  }
 
-/* جعل الشعار على الجهة اليسرى */
-.navbar .navbar-brand {
-  position: static;
-  margin-right: 0;
-  margin-left: auto; /* دفع الشعار إلى اليسار */
-  order: 2; /* جعل الشعار يظهر بعد القائمة */
-}
+  /* جعل الشعار على الجهة اليسرى */
+  .navbar .navbar-brand {
+    position: static;
+    margin-right: 0;
+    margin-left: auto; /* دفع الشعار إلى اليسار */
+    order: 2; /* جعل الشعار يظهر بعد القائمة */
+  }
 
-.navbar .dropdown-menu {
-  text-align: right; /* محاذاة نص القوائم المنسدلة إلى اليمين */
-}
+  .navbar .dropdown-menu {
+    text-align: right; /* محاذاة نص القوائم المنسدلة إلى اليمين */
+  }
 
-.navbar .navbar-toggler {
-  margin-right: auto;
-  margin-left: 0;
-}
+  .navbar .navbar-toggler {
+    margin-right: auto;
+    margin-left: 0;
+  }
 
-/* تعديل الحاوية الرئيسية لشريط التنقل */
-.navbar .container-fluid {
-  display: flex;
-  flex-direction: row; /* ترتيب العناصر في الحاوية */
-  justify-content: space-between; /* توزيع المساحة بين الشعار والقائمة */
+  /* تعديل الحاوية الرئيسية لشريط التنقل */
+  .navbar .container-fluid {
+    display: flex;
+    flex-direction: row; /* ترتيب العناصر في الحاوية */
+    justify-content: space-between; /* توزيع المساحة بين الشعار والقائمة */
+  }
 }
 
 /* جعل نص البانر من اليمين إلى اليسار */
@@ -71,10 +74,13 @@ body {
   }
 }
 
-/* إزاحة صورة وأزرار التحميل في البانر إلى اليمين قليلاً */
-.banner-text .img-fluid,
-.banner-text .store-buttons {
-  margin-left: 100px;
+/* إزاحة صورة وأزرار التحميل في البانر إلى اليمين قليلاً — للشاشات الكبيرة فقط
+   حتى لا تتعارض مع التوسيط في الشاشات الصغيرة مثل النسخة الإنجليزية */
+@media (min-width: 769px) {
+  .banner-text .img-fluid,
+  .banner-text .store-buttons {
+    margin-left: 100px;
+  }
 }
 
 /* نصوص بطاقات الخدمات من اليمين إلى اليسار */
@@ -132,4 +138,22 @@ p, li, .media-body,
   border-left: 1px solid #e9ecef;
   border-right: 4px solid #1490DA;
   text-align: right;
+}
+
+/* ===== قائمة الجوال الجانبية — RTL =====
+   الدرج يبقى من اليمين مثل الإنجليزية، والعناصر تتجمّع على الحافة اليمنى */
+@media (max-width: 991px) {
+  .navbar .nav-button {
+    justify-content: flex-start; /* في RTL البداية = يمين */
+  }
+
+  /* الأيقونة أولاً بصرياً فتظهر على أقصى اليمين (مطابقاً للإنجليزية) */
+  .navbar .nav-link[data-scroll-nav] .nav-button::before,
+  .navbar #language-switcher .nav-button::before {
+    order: -1;
+  }
+
+  .navbar .language-dropdown .dropdown-item {
+    text-align: right;
+  }
 }

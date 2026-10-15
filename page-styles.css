@@ -64,6 +64,17 @@
   overflow: visible;
   perspective: 1000px;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
+/* إصلاح انزياح صورة ظهر الهاتف عند القلب —
+   ترث نفس max-width من ميديا كويري البانر (مثل الأمامية تماماً)
+   وتتمركز بنسبة 50% فيتطابق حجمها ومكانها مع الأمامية بكل المقاسات */
+.phone-flip .phone-back {
+  left: 50%;
+  transform: translateX(-50%) rotateY(180deg);
+  -webkit-transform: translateX(-50%) rotateY(180deg);
 }
 
 /* إضافة ظل للهاتف */
@@ -544,4 +555,396 @@
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ===== قائمة الجوال الجانبية ===== */
+@media (max-width: 991px) {
+  /* لوحة القائمة كدرج جانبي منزلق بحركة نابضة */
+  .navbar .navbar-collapse {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: auto;
+    width: 45vw;
+    min-width: 190px;
+    max-width: 250px;
+    height: 100vh;
+    margin: 0;
+    background: #fff;
+    border: none;
+    border-radius: 0 24px 24px 0;
+    box-shadow: 15px 0 60px rgba(20, 144, 218, 0.18), 15px 0 40px rgba(0, 0, 0, 0.25);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(-110%);
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    z-index: 10001;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .navbar .navbar-collapse.show {
+    transform: translateX(0);
+  }
+
+  .navbar .navbar-collapse.collapsing {
+    height: 100vh !important;
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1) !important;
+  }
+
+  /* الخلفية المعتمة خلف القائمة */
+  body.drawer-open {
+    overflow: hidden;
+  }
+
+  /* z-index:9998 — تحت النافبار (9999) حتى لا تحجب الدرج الموجود داخله */
+  body.drawer-open::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 25, 40, 0.5);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+    z-index: 9998;
+    animation: backdropFade 0.35s ease;
+  }
+
+  /* عناصر القائمة — صفوف مسطّحة بمستوى واحد */
+  .navbar .navbar-nav {
+    padding: 18px 0;
+    width: 100%;
+    flex: 1;
+  }
+
+  .navbar .nav-item {
+    border-bottom: 1px solid #f0f3f7;
+  }
+
+  .navbar .nav-item:last-child {
+    border-bottom: none;
+  }
+
+  /* تجريد الحبّة الزخرفية — تصميم ديسكتوب لا يناسب الدرج */
+  .navbar .nav-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 14px;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    min-height: auto !important;
+    width: 100%;
+  }
+
+  .navbar .nav-button .circle-bg,
+  .navbar .nav-button .left-svg,
+  .navbar .nav-button .right-svg,
+  .navbar .nav-button .overlay {
+    display: none !important;
+  }
+
+  .navbar .button-text {
+    position: static !important;
+    transform: none !important;
+    color: #3c4858 !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    text-shadow: none !important;
+  }
+
+  /* أيقونة لكل عنصر — تُدفع لأقصى اليمين */
+  .navbar .nav-link[data-scroll-nav] .nav-button::before {
+    order: 1;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 16px;
+    color: #1490DA;
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(20, 144, 218, 0.09);
+    border-radius: 10px;
+    transition: all 0.25s ease;
+  }
+
+  .navbar .nav-link[data-scroll-nav="0"] .nav-button::before { content: '\f015'; }
+  .navbar .nav-link[data-scroll-nav="1"] .nav-button::before { content: '\f1b9'; }
+  .navbar .nav-link[data-scroll-nav="2"] .nav-button::before { content: '\f005'; }
+  .navbar .nav-link[data-scroll-nav="3"] .nav-button::before { content: '\f540'; }
+  .navbar .nav-link[data-scroll-nav="4"] .nav-button::before { content: '\f3cd'; }
+  .navbar .nav-link[data-scroll-nav="5"] .nav-button::before { content: '\f059'; }
+  .navbar .nav-link[data-scroll-nav="6"] .nav-button::before { content: '\f0e0'; }
+
+  /* أيقونة كرة أرضية لزر اللغة */
+  .navbar #language-switcher .nav-button::before {
+    order: 1;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 16px;
+    color: #1490DA;
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(20, 144, 218, 0.09);
+    border-radius: 10px;
+    transition: all 0.25s ease;
+    content: '\f0ac';
+  }
+
+  .navbar .nav-item > a {
+    display: block;
+    padding: 15px 22px !important;
+    transition: all 0.25s ease;
+    text-transform: none;
+  }
+
+  /* عند اللمس — الصف كله بتدرج أزرق */
+  .navbar .nav-item > a:hover,
+  .navbar .nav-item > a.active {
+    background: linear-gradient(90deg, rgba(20, 144, 218, 0.12), rgba(63, 169, 232, 0.04));
+  }
+
+  .navbar .nav-item > a:hover .nav-button::before,
+  .navbar .nav-item > a.active .nav-button::before {
+    background: #1490DA;
+    color: #fff;
+  }
+
+  .navbar .nav-item > a:hover .button-text,
+  .navbar .nav-item > a.active .button-text {
+    color: #1490DA !important;
+  }
+
+  /* القائمة المنسدلة للغات داخل قائمة الجوال */
+  .navbar .language-dropdown {
+    position: static;
+    border: none;
+    box-shadow: none;
+    margin: 0;
+    border-radius: 0;
+    border-top: 1px solid #f0f3f7;
+    background: transparent;
+  }
+
+  .navbar .language-dropdown .dropdown-item {
+    text-align: right;
+    color: #3c4858 !important;
+    font-weight: 500;
+    padding: 10px 22px !important;
+    transition: all 0.2s ease;
+  }
+
+  .navbar .language-dropdown .dropdown-item:hover,
+  .navbar .language-dropdown .dropdown-item.active {
+    color: #1490DA !important;
+    background: rgba(20, 144, 218, 0.08) !important;
+  }
+
+  /* دخول العناصر بحركة متدرجة */
+  .navbar-collapse.show .nav-item,
+  .navbar-collapse.collapsing .nav-item {
+    animation: navItemSlide 0.35s ease both;
+  }
+  .navbar-collapse.show .nav-item:nth-child(1),
+  .navbar-collapse.collapsing .nav-item:nth-child(1) { animation-delay: 0.03s; }
+  .navbar-collapse.show .nav-item:nth-child(2),
+  .navbar-collapse.collapsing .nav-item:nth-child(2) { animation-delay: 0.06s; }
+  .navbar-collapse.show .nav-item:nth-child(3),
+  .navbar-collapse.collapsing .nav-item:nth-child(3) { animation-delay: 0.09s; }
+  .navbar-collapse.show .nav-item:nth-child(4),
+  .navbar-collapse.collapsing .nav-item:nth-child(4) { animation-delay: 0.12s; }
+  .navbar-collapse.show .nav-item:nth-child(5),
+  .navbar-collapse.collapsing .nav-item:nth-child(5) { animation-delay: 0.15s; }
+  .navbar-collapse.show .nav-item:nth-child(6),
+  .navbar-collapse.collapsing .nav-item:nth-child(6) { animation-delay: 0.18s; }
+  .navbar-collapse.show .nav-item:nth-child(7),
+  .navbar-collapse.collapsing .nav-item:nth-child(7) { animation-delay: 0.21s; }
+  .navbar-collapse.show .nav-item:nth-child(8),
+  .navbar-collapse.collapsing .nav-item:nth-child(8) { animation-delay: 0.24s; }
+  .navbar-collapse.show .nav-item:nth-child(9),
+  .navbar-collapse.collapsing .nav-item:nth-child(9) { animation-delay: 0.27s; }
+
+  /* زر الهامبرغر كحبة بيضاء */
+  .navbar-toggler {
+    background: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 14px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
+    outline: none !important;
+  }
+
+  .navbar-toggler span {
+    color: #1490DA !important;
+    font-size: 17px;
+  }
+}
+
+@keyframes navItemSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes backdropFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ===== أزرار التحميل على الجوال ===== */
+@media (max-width: 768px) {
+  .store-buttons {
+    gap: 6px;
+    margin: 12px auto !important;
+  }
+
+  .playstore-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;               /* فاصل ثابت محايد للاتجاه بدل margin-left */
+    padding: 6px 12px;
+    border-radius: 9px;
+    width: auto !important;
+    max-width: 160px;
+    margin-right: 0;
+    margin-left: 0;
+    margin-top: 0;
+    font-size: 0.75rem;
+  }
+
+  .playstore-button .icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+
+  .playstore-button .texts {
+    margin-left: 0;
+    margin-right: 0;
+    line-height: 1.15;
+  }
+
+  .playstore-button .text-1 {
+    font-size: 0.55rem;
+    margin-bottom: 0.1rem;
+  }
+
+  .playstore-button .text-2 {
+    font-size: 0.7rem;
+    font-weight: 600;
+  }
+}
+
+/* ===== بطاقات المواقف من Firestore ===== */
+.parking-item.firestore-item {
+  align-items: flex-start;
+}
+
+.parking-item.firestore-item .parking-icon {
+  margin-top: 4px;
+}
+
+.parking-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  margin-top: 8px;
+  font-size: 12px;
+  color: #5a6a7a;
+}
+
+.parking-meta i {
+  color: #1490DA;
+  margin-right: 4px;
+}
+
+.parking-meta .meta-sep {
+  color: #d5dde5;
+}
+
+.parking-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.feature-chip {
+  background: rgba(20, 144, 218, 0.09);
+  color: #1490DA;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.status-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.status-badge.open {
+  background: rgba(40, 180, 99, 0.12);
+  color: #1e9e57;
+}
+
+.status-badge.closed {
+  background: rgba(220, 53, 69, 0.1);
+  color: #dc3545;
+}
+
+.status-badge.inactive {
+  background: rgba(120, 130, 140, 0.12);
+  color: #7a8694;
+}
+
+.parking-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #1490DA;
+  text-decoration: none;
+}
+
+.parking-phone:hover {
+  color: #0d6fa8;
+  text-decoration: underline;
+}
+
+/* بطاقة الموقف قابلة للنقر — مؤشر وتمييز */
+.parking-item.clickable {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.parking-item.clickable:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 14px rgba(20, 144, 218, 0.15);
 }

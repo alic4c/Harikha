@@ -76,6 +76,16 @@
   margin: 0 auto;
 }
 
+/* رفع النقاط قليلاً على الشاشات الصغيرة لتظهر أسفل الهاتف مباشرة وفوق النص */
+@media (max-width: 768px) {
+  .horizontal-dots {
+    bottom: 6px;
+    z-index: 5;
+    left: 75px;
+    right: 75px;
+  }
+}
+
 .dot {
   width: 6px;
   height: 6px;

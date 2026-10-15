@@ -2,7 +2,7 @@
   "name": "حركها - Harikha",
   "short_name": "Harikha",
   "description": "تطبيق ذكي للتواصل مع أصحاب السيارات وحجز مواقف السيارات",
-  "start_url": "index-ar.html",
+  "start_url": "index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#1490DA",
